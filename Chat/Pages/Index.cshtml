@@ -11,12 +11,16 @@
         <div style="font-size: smaller">@mes.Sign --- @mes.When</div>
     </div>
 }
+<div id="bottom" />
 <hr />
 <div>
-    <form method="post">
-        <label asp-for="Text"></label>
-        <input asp-for="Text" value="" />
-        <input type="submit" value="Send" />
-        <span asp-validation-for="Text"></span>
-    </form>
+    @Html.AntiForgeryToken()
+    <label asp-for="Text"></label>
+    <input asp-for="Text" value="" />
+    <input type="button" value="Send" onclick="send()" />
+    <span asp-validation-for="Text"></span>
 </div>
+
+@section Scripts {
+    <script src="~/js/index.js" type="text/javascript" charset="utf-8"></script>
+}
