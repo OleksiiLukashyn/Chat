@@ -33,19 +33,19 @@ namespace Chat.Pages
             Messages = _db.Messages.ToList();
         }
 
-        public void OnPost()
-        {
-            if (ModelState.IsValid)
-            {
-                _db.Messages.Add(new Message
-                {
-                    Text = Text,
-                    When = DateTime.Now,
-                    Sign = User.Identity.Name
-                });
-                _db.SaveChanges();
-            }
-            Messages = _db.Messages.ToList();
-        }
+        //public void OnPost()
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        _db.Messages.Add(new Message
+        //        {
+        //            Text = Text,
+        //            When = DateTime.Now,
+        //            Sign = User.Identity.Name
+        //        });
+        //        _db.SaveChanges();
+        //    }
+        //    Messages = _db.Messages.ToList();
+        //}
     }
 }
